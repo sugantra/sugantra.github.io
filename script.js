@@ -319,7 +319,6 @@
   }
 
   document.querySelectorAll('.btn-add-cart').forEach((btn, index) => {
-    // Assign generic ID if needed
     const card = btn.closest('.product-card');
     card.dataset.productId = `prod_${index}`;
 
@@ -341,7 +340,11 @@
 
       saveCart();
       renderCart();
-      toggleCart(true); // Automatically slide out cart to show feedback
+
+      // Update the toast to include the product name!
+      showToast(`${name} added to cart!`);
+
+      //toggleCart(true); // Automatically slide out cart to show feedback
     });
   });
 
